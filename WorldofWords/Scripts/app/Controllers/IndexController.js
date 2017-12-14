@@ -66,7 +66,7 @@
         };
         $scope.openLoginModal = function () {
             var modalInstance = $modal.open({
-                templateUrl: '../Views/LoginModal.html',
+                templateUrl: 'WoW/Views/LoginModal.html',
                 controller: 'LoginController',
                 size: ConstService.small
             });

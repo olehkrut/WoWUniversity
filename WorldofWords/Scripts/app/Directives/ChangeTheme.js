@@ -3,7 +3,7 @@
         restrict: "E",
         controller: "IndexController",
         replace: true,
-        template: '<link rel="stylesheet" href="dist/{{ defaultTheme }}"/>',
+        template: '<link rel="stylesheet" href="WoW/dist/{{ defaultTheme }}"/>',
     }
 
 });

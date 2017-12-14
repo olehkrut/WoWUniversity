@@ -15,7 +15,7 @@ app.service('HttpRequest', ["$http", "$q", "UserService", "$location",
 
         this.get = function (url, deferred) {
             createToken();
-            $http.get(url)
+            $http.get("WoW/" + url)
                 .success(function (response) {
                     deferred.resolve(response);
                 })
@@ -30,7 +30,7 @@ app.service('HttpRequest', ["$http", "$q", "UserService", "$location",
 
         this.post = function (url, data, deferred) {
             createToken();
-            $http.post(url, data)
+            $http.post("WoW/" + url, data)
                 .success(function (response) {
                     deferred.resolve(response);
                 })
@@ -45,7 +45,7 @@ app.service('HttpRequest', ["$http", "$q", "UserService", "$location",
 
         this.delete = function (url, deferred) {
             createToken();
-            $http.delete(url)
+            $http.delete("WoW/" + url)
                 .success(function (response) {
                     deferred.resolve(response);
                 })
@@ -60,7 +60,7 @@ app.service('HttpRequest', ["$http", "$q", "UserService", "$location",
 
         this.put = function (url, data, deferred) {
             createToken();
-            $http.put(url, data)
+            $http.put("WoW/" + url, data)
                 .success(function (response) {
                     deferred.resolve(response);
                 })

@@ -13,13 +13,13 @@ app.config(["$routeProvider", function ($routeProvider) {
 
         // route for the home page
         .when('/Home', {
-            templateUrl: 'Views/Home.html',
+            templateUrl: 'Wow/Views/Home.html',
             data: {
                 privateData: true
             }
         })
         .when('ForgotPasswordModal', {
-            templateUrl: 'Views/ForgotPasswordModal.html',
+            templateUrl: '/Wow/Views/ForgotPasswordModal.html',
             controller: 'ResetPasswordController',
             data: {
                 privateData: true
@@ -27,7 +27,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for the courses page
         .when('/Courses', {
-            templateUrl: 'Views/Courses.html',
+            templateUrl: '/Wow/Views/Courses.html',
             controller: 'CourseController',
             data: {
                 privateData: false
@@ -35,7 +35,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for the user courses page
         .when('/UserCourses', {
-            templateUrl: 'Views/UserCourses.html',
+            templateUrl: '/Wow/Views/UserCourses.html',
             controller: 'UserCoursesController',
             data: {
                 privateData: false
@@ -43,7 +43,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for the create courses page
         .when('/CreateCourse', {
-            templateUrl: 'Views/CreateCourse.html',
+            templateUrl: '/Wow/Views/CreateCourse.html',
             controller: 'CreateCourseController',
             data: {
                 privateData: false
@@ -51,7 +51,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for the edit courses page
         .when('/EditCourse/:courseId', {
-            templateUrl: 'Views/EditCourse.html',
+            templateUrl: '/Wow/Views/EditCourse.html',
             controller: 'EditCourseController',
             data: {
                 privateData: false
@@ -59,7 +59,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         //route for my page
         .when('/MyPage', {
-            templateUrl: 'Views/MyPage.html',
+            templateUrl: '/Wow/Views/MyPage.html',
             controller: 'MyPageController',
             data: {
                 privateData: false
@@ -67,14 +67,14 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         //route for email sent page
         .when('/EmailSentPage', {
-            templateUrl: 'Views/EmailSentPage.html',
+            templateUrl: '/Wow/Views/EmailSentPage.html',
             data: {
                 privateData: true
             }
         })
         //
         .when('/EmailConfirmed', {
-            templateUrl: 'Views/EmailConfirmed.html',
+            templateUrl: '/Wow/Views/EmailConfirmed.html',
             controller: 'EmailConfirmedController',
             data: {
                 privateData: true
@@ -82,7 +82,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         //route for tutor page
         .when('/Tutor/:wordSuiteId', {
-            templateUrl: 'Views/Tutor.html',
+            templateUrl: '/Wow/Views/Tutor.html',
             controller: 'TutorController',
             data: {
                 privateData: false
@@ -90,7 +90,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         //route for tutor with images page
         .when('/TutorPicture/:wordSuiteId', {
-            templateUrl: 'Views/TutorPicture.html',
+            templateUrl: '/Wow/Views/TutorPicture.html',
             controller: 'TutorController',
             data: {
                 privateData: false
@@ -98,7 +98,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         //route for wordsuite words page
         .when('/WordSuiteWords/:wordSuiteId', {
-            templateUrl: 'Views/WordSuiteWords.html',
+            templateUrl: '/Wow/Views/WordSuiteWords.html',
             controller: 'WordSuiteWordsController',
             data: {
                 privateData: false
@@ -106,7 +106,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for the Create WordSuite page
         .when('/CreateWordSuite', {
-            templateUrl: 'Views/CreateWordSuite.html',
+            templateUrl: '/Wow/Views/CreateWordSuite.html',
             controller: 'CreateWordSuiteController',
             data: {
                 privateData: false
@@ -114,7 +114,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for the Edit WordSuite page
         .when('/EditWordSuite', {
-            templateUrl: 'Views/EditWordSuite.html',
+            templateUrl: '/Wow/Views/EditWordSuite.html',
             controller: 'EditWordSuiteController',
             data: {
                 privateData: false
@@ -122,14 +122,14 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for configuring group
         .when('/AddGroup', {
-            templateUrl: 'Views/AddGroup.html',
+            templateUrl: '/Wow/Views/AddGroup.html',
             controller: 'AddGroupController',
             data: {
                 privateData: false
             }
         })
          .when('/PublicGroups', {
-             templateUrl: 'Views/PublicGroups.html',
+             templateUrl: '/Wow/Views/PublicGroups.html',
              controller: 'PublicGroupsController',
              data: {
                  privateData: false
@@ -138,7 +138,7 @@ app.config(["$routeProvider", function ($routeProvider) {
 
         // route for showing words
         .when('/Words', {
-            templateUrl: 'Views/Words.html',
+            templateUrl: '/Wow/Views/Words.html',
             controller: 'WordsController',
             data: {
                 privateData: false
@@ -147,7 +147,7 @@ app.config(["$routeProvider", function ($routeProvider) {
 
         // route for adding words
         .when('/AddWord', {
-            templateUrl: 'Views/AddWord.html',
+            templateUrl: '/Wow/Views/AddWord.html',
             controller: 'WordsController',
             data: {
                 privateData: false
@@ -156,7 +156,7 @@ app.config(["$routeProvider", function ($routeProvider) {
 
         // route for the languages page
         .when('/Languages', {
-            templateUrl: 'Views/Languages.html',
+            templateUrl: '/Wow/Views/Languages.html',
             controller: 'LanguageController',
             data: {
                 privateData: false
@@ -165,7 +165,7 @@ app.config(["$routeProvider", function ($routeProvider) {
 
         // route for the quiz page
         .when('/Quiz/:wordSuiteId', {
-            templateUrl: 'Views/Quiz.html',
+            templateUrl: '/Wow/Views/Quiz.html',
             controller: 'QuizController',
             data: {
                 privateData: false
@@ -173,7 +173,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for the synonym quiz page
         .when('/SynonymQuiz/:wordSuiteId', {
-            templateUrl: 'Views/SynonymQuiz.html',
+            templateUrl: '/Wow/Views/SynonymQuiz.html',
             controller: 'SynonymQuizController',
             data: {
                 privateData: false
@@ -181,7 +181,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for the mix quiz page
         .when('/MixQuiz/:wordSuiteId', {
-            templateUrl: 'Views/QuizMix.html',
+            templateUrl: '/Wow/Views/QuizMix.html',
             controller: 'MixQuizController',
             data: {
                 privateData: false
@@ -189,7 +189,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for the description quiz page
         .when('/QuizDesc/:wordSuiteId', {
-            templateUrl: 'Views/QuizDesc.html',
+            templateUrl: '/Wow/Views/QuizDesc.html',
             controller: 'QuizDescController',
             data: {
                 privateData: false
@@ -197,14 +197,14 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for the groups page 
         .when('/Groups', {
-            templateUrl: 'Views/Groups.html',
+            templateUrl: '/Wow/Views/Groups.html',
             controller: 'GroupController',
             data: {
                 privateData: false
             }
         })
         .when('/RequestsToSubscribe', {
-            templateUrl: 'Views/RequestsToSubscribe.html',
+            templateUrl: '/Wow/Views/RequestsToSubscribe.html',
             controller: 'RequestsToSubscribe',
             data: {
                 privateData: false
@@ -212,14 +212,14 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for the wordsuites page 
         .when('/WordSuites', {
-            templateUrl: 'Views/WordSuites.html',
+            templateUrl: '/Wow/Views/WordSuites.html',
             controller: 'WordSuitesController',
             data: {
                 privateData: false
             }
             //route for the import wordtranslations page
         }).when('/ImportWordTranslations', {
-            templateUrl: 'Views/ImportWordTranslations.html',
+            templateUrl: '/Wow/Views/ImportWordTranslations.html',
             controller: 'ImportWordTranslationsController',
             data: {
                 privateData: false
@@ -227,12 +227,12 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         //route for creating wordtranslations
         .when('/CreateWordTranslation', {
-            templateUrl: 'Views/CreateWordTranslation.html',
+            templateUrl: '/Wow/Views/CreateWordTranslation.html',
             controller: 'CreateWordTranslationController'
         })
         // route for configuring group page
         .when('/Groups/:groupId', {
-            templateUrl: 'Views/GroupDetails.html',
+            templateUrl: '/Wow/Views/GroupDetails.html',
             controller: 'GroupDetailsController',
             data: {
                 privateData: false
@@ -240,7 +240,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for progress chart
         .when('/Groups/:groupId/:userId/chart', {
-            templateUrl: 'Views/StudentProgressChart.html',
+            templateUrl: '/Wow/Views/StudentProgressChart.html',
             controller: 'StudentProgressChartController',
             data: {
                 privateData: false
@@ -248,7 +248,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for extended word suite by student adding words over default suite
         .when('/ExtendedWordSuite/:groupId/:suiteId', {
-            templateUrl: 'Views/ExtendedWordSuite.html',
+            templateUrl: '/Wow/Views/ExtendedWordSuite.html',
             controller: 'ExtendedWordSuiteController',
             data: {
                 privateData: false
@@ -256,7 +256,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for progress of student
         .when('/Groups/:groupId/:userId', {
-            templateUrl: 'Views/StudentProgress.html',
+            templateUrl: '/Wow/Views/StudentProgress.html',
             controller: 'StudentProgressController',
             data: {
                 privateData: false
@@ -264,14 +264,14 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         // route for editing wordsuite page
         .when('/EditWordSuite/:wordSuiteId', {
-            templateUrl: 'Views/EditWordSuite.html',
+            templateUrl: '/Wow/Views/EditWordSuite.html',
             controller: 'EditWordSuiteController',
             data: {
                 privateData: false
             }
         })
         .when('/EditUserProfile', {
-            templateUrl: 'Views/EditUserProfile.html',
+            templateUrl: '/Wow/Views/EditUserProfile.html',
             controller: 'EditUserProfileController',
             data: {
                 privateData: false
@@ -279,7 +279,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         //route for course detail
         .when('/CourseDetail/:Id', {
-            templateUrl: 'Views/CourseDetail.html',
+            templateUrl: '/Wow/Views/CourseDetail.html',
             controller: 'CourseDetailController',
             data: {
                 privateData: false
@@ -287,7 +287,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         //route for list of users
         .when('/Users', {
-            templateUrl: 'Views/Users.html',
+            templateUrl: '/Wow/Views/Users.html',
             controller: 'UsersConfiguringController',
             data: {
                 privateData: false
@@ -295,21 +295,21 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         //route for Global Dictionary
         .when('/GlobalDictionary', {
-            templateUrl: 'Views/GlobalDictionary.html', //однакове
+            templateUrl: '/Wow/Views/GlobalDictionary.html', //однакове
             controller: 'GlobalDictionaryController',
             data: {
                 privateData: false
             }
         })
         .when('RegisterModal', {
-            templateUrl: 'Views/RegisterModal.html',
+            templateUrl: '/Wow/Views/RegisterModal.html',
             controller: 'RegisterController',
             data: {
                 privateData: true
             }
         })
         .when('/ChangePassword', {
-            templateUrl: 'Views/ChangePassword.html',
+            templateUrl: '/Wow/Views/ChangePassword.html',
             controller: 'ChangePasswordController',
             data: {
                 privateData: true
@@ -317,47 +317,47 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         //route for Global Dictionary
         .when('/GlobalDictionary', {
-            templateUrl: 'Views/GlobalDictionary.html', //однакове
+            templateUrl: '/Wow/Views/GlobalDictionary.html', //однакове
             controller: 'GlobalDictionaryController',
             data: {
                 privateData: false
             }
         })
         .when('LoginModal', {
-            templateUrl: 'Views/LoginModal.html',
+            templateUrl: '/Wow/Views/LoginModal.html',
             controller: 'LoginController',
             data: {
                 privateData: true
             }
         })
         .when('UnassignedModal', {
-            templateUrl: 'Views/UnassignedModal.html',
+            templateUrl: '/Wow/Views/UnassignedModal.html',
             controller: 'UnassignedModalController',
             data: {
                 privateData: false
             }
         })
         .when('/PasswordChanged', {
-            templateUrl: 'Views/PasswordChanged.html',
+            templateUrl: '/Wow/Views/PasswordChanged.html',
             data: {
                 privateData: true
             }
         })
         .when('/UnassignedModal', {
-            templateUrl: 'Views/UnassignedModal.html',
+            templateUrl: '/Wow/Views/UnassignedModal.html',
             data: {
                 privateData: false
             }
         })
         .when('/TeacherManager', {
-            templateUrl: 'Views/TeacherManager.html',
+            templateUrl: '/Wow/Views/TeacherManager.html',
             controller: 'TeacherManagerController',
             data: {
                 privateData: false
             }
         })
         .when('/Tickets', {
-            templateUrl: 'Views/Tickets.html',
+            templateUrl: '/Wow/Views/Tickets.html',
             controller: 'TicketController',
             data: {
                 privateData: false
@@ -373,7 +373,7 @@ app.config(["$routeProvider", function ($routeProvider) {
     VKI_CONFIG.keyboardInputInitiator =
             "<span class='input-group-btn'>"
                     + "<button class='btn btn-default btn-block'>"
-                        + "<img src='../Content/keyboard.png'>"
+                        + "<img src='WoW/Content/keyboard.png'>"
                     + "</button>"
             + "</span>";
 }])
@@ -412,14 +412,14 @@ app.run(["$rootScope", "$modal", "UserService", "ConstService", "$location", "Hu
             HubService.initialize();
             var userInfo = UserService.getUserData();
             if (!userInfo) {
-                $location.replace("/Index#/Home");
+                $location.replace("WoW/Index#/Home");
                 HubService.stop();
                 $rootScope.isPrivate = next.data.privateData;
                 $rootScope.$broadcast('hideSideBar');
                 if (!$rootScope.isPrivate) {
-                    $location.replace('/Index#/Home');
+                    $location.replace('WoW/Index#/Home');
                     $modal.open({
-                        templateUrl: '../Views/UnauthorizeModal.html',
+                        templateUrl: '/Wow/Views/UnauthorizeModal.html',
                         controller: 'UnauthorizeModalController',
                         size: ConstService.small
                     });

@@ -15,7 +15,7 @@
     <AssemblyName>WorldofWords</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort>44300</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -28,6 +28,7 @@
     <RestorePackages>true</RestorePackages>
     <NuGetPackageImportStamp>c709f444</NuGetPackageImportStamp>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -329,8 +330,12 @@
     <Compile Include="Utils\WordSuitePdfGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\angular-toastr.css" />
-    <Content Include="Content\angular-toastr.min.css" />
+    <Content Include="Content\angular-toastr.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\angular-toastr.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Arrows\left-arrow.png" />
     <Content Include="Content\Arrows\left-disabled-arrow.png" />
     <Content Include="Content\Arrows\left-hover-arrow.png" />
@@ -338,9 +343,15 @@
     <Content Include="Content\Arrows\right-disabled-arrow.png" />
     <Content Include="Content\Arrows\right-hover-arrow.png" />
     <Content Include="Content\dash-aside.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap-theme.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\bootstrap-theme.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\bootstrap.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\drop-down-blue-theme.css" />
     <Content Include="Content\drop-down-dark-theme.css" />
@@ -373,8 +384,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\bootstrap.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Gruntfile.js" />
     <Content Include="Images\distance-learning2.jpg" />
     <Content Include="Images\distance-learning3.jpg" />
@@ -706,7 +721,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3138</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3138/</IISUrl>
+          <IISUrl>http://localhost/WoW</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -39,9 +39,9 @@
                     $scope.isLoggedIn = IndexService.isLoggedInto();
                     if (!contain(token.roles, ConstService.StudentRole)) {
                         if (!contain(token.roles, ConstService.TeacherRole)) {
-                            location.replace('/Index#/Users/');
-                        } else location.replace('/Index#/TeacherManager/');
-                    } else location.replace('/Index#/Courses/');
+                            location.replace('WoW/Index#/Users/');
+                        } else location.replace('WoW/Index#/TeacherManager/');
+                    } else location.replace('WoW/Index#/Courses/');
                 };
                 var isReloadedAndRedirected = function (token) {
                     if (!onceReloading) {

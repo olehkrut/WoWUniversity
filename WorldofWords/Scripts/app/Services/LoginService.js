@@ -14,7 +14,7 @@
 
     this.login = function (userInfo) {
         var deferred = $q.defer();
-        $http.post('api/login', userInfo)
+        $http.post('WoW/api/login', userInfo)
             .success(function (token) {
                 userTokenEncoded.encode(token);
                 deferred.resolve(userTokenEncoded);
