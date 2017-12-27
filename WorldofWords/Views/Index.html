@@ -1,34 +1,167 @@
-﻿<!doctype html >
+﻿<!doctype html>
 <html ng-app="MyApp" xmlns="http://www.w3.org/1999/xhtml">
 <head ng-controller="IndexController">
     <meta charset="utf-8">
     <base href="/">
     <title>World of Words</title>
-    <link rel="stylesheet" href="../Content/material-spinner.css"/>
+    <link rel="stylesheet" href="../Content/material-spinner.css" />
     <change-theme></change-theme>
     <link href="../Content/Syte.less" rel="stylesheet" />
 
-    <script src="../dist/scripts-concat.js"></script>
+    <!--<script src="WoW/dist/scripts-concat.js"></script>-->
+    <script src="../Scripts/jquery/jquery-2.1.4.js"></script>
+    <script src="../Scripts/jquery/jquery.validate.js"></script>
+    <script src="../Scripts/jquery/jquery.scrollTo.min.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="../Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="../Scripts/angular/angular.js"></script>
+    <script src="../Scripts/nicescroll.js"></script>
+    <script src="../Scripts/sidebar.js"></script>
+    
+    <script src="../Scripts/angular/angular-route.js"></script>
+    <script src="../Scripts/angular/angular-toastr.js"></script>
+    <script src="../Scripts/angular/angular-toastr.tpls.js"></script>
+    <script src="../Scripts/angular/angular-mocks.js"></script>
+    <script src="../Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="../Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="../Scripts/libs/angular-virtual-keyboard.js"></script>
+                 ..
+    <script src="../Scripts/libs/vki-layouts.js"></script>
+    <script src="../Scripts/libs/vki-deadkeys.js"></script>
+    <script src="../Scripts/libs/sha512.js"></script>
+    <script src="../Scripts/libs/Timer.js"></script>
+    <script src="../Scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="../Scripts/isteven-multi-select.js"></script>
+    <script src="../Scripts/libs/lodash.min.js"></script>
+                 
+    <script src="../Scripts/libs/canvasjs.min.js"></script>
+    <script src="../Scripts/isteven-multi-select.js"></script>
+    <script src="../Scripts/app/app.js"></script>
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="It's just like WoW, with words instead of quests." />
 </head>
 <body ng-controller="IndexController" ng-class="getBodySidebarClass()">
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <button id="sidebar-toggle"
-            type="button"
-            class="navbar-toggle"
-            ng-show="isLoggedIn()"
-            ng-click="toggleSidebar()">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-    <div class="navbar-header">
-            <a href="" ng-click="onLogoClick()"><img class="icon-bar" src="/Images/logo.png" /></a>
-    </div>
-    <div class="container">
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
+
+    <script src="../Scripts/app/Services/ChangePasswordService.js"></script>
+    <script src="../Scripts/app/Services/ConstService.js"></script>
+    <script src="../Scripts/app/Services/CourseService.js"></script>
+    <script src="../Scripts/app/Services/EditUserProfileService.js"></script>
+    <script src="../Scripts/app/Services/EnrollmentService.js"></script>
+    <script src="../Scripts/app/Services/GroupService.js"></script>
+    <script src="../Scripts/app/Services/HttpRequest.js"></script>
+    <script src="../Scripts/app/Services/HubService.js"></script>
+    <script src="../Scripts/app/Services/IndexService.js"></script>
+    <script src="../Scripts/app/Services/LanguageService.js"></script>
+    <script src="../Scripts/app/Services/LoginService.js"></script>
+    <script src="../Scripts/app/Services/ModalService.js"></script>
+    <script src="../Scripts/app/Services/MyPageService.js"></script>
+    <script src="../Scripts/app/Services/PictureService.js"></script>
+    <script src="../Scripts/app/Services/QuizService.js"></script>
+    <script src="../Scripts/app/Services/RecorderService.js"></script>
+    <script src="../Scripts/app/Services/RecordsService.js"></script>
+    <script src="../Scripts/app/Services/RegisterService.js"></script>
+    <script src="../Scripts/app/Services/ResetPasswordService.js"></script>
+    <script src="../Scripts/app/Services/ShareScopeService.js"></script>
+    <script src="../Scripts/app/Services/TagService.js"></script>
+    <script src="../Scripts/app/Services/TicketService.js"></script>
+    <script src="../Scripts/app/Services/TinyPlayerService.js"></script>
+    <script src="../Scripts/app/Services/TutorService.js"></script>
+    <script src="../Scripts/app/Services/UserService.js"></script>
+    <script src="../Scripts/app/Services/WordsService.js"></script>
+    <script src="../Scripts/app/Services/WordSuiteService.js"></script>
+    <script src="../Scripts/app/Services/WordTranslationService.js"></script>
+    <script src="../Scripts/app/Filters/TopFilter.js"></script>
+    <script src="../Scripts/app/Filters/PartOfSpeechFilter.js"></script>
+    <script src="../Scripts/app/Filters/PercentageFilter.js"></script>
+    <script src="../Scripts/app/Filters/SplitFilter.js"></script>
+    <script src="../Scripts/app/Filters/TimeFilter.js"></script>
+    <script src="../Scripts/app/Directives/angularjs-dropdown-multiselect.js"></script>
+    <script src="../Scripts/app/Directives/angularjs-dropdown-multiselect.js"></script>
+    <script src="../Scripts/app/Directives/ChangeTheme.js"></script>
+    <script src="../Scripts/app/Directives/draganddrop.js"></script>
+    <script src="../Scripts/app/Directives/passwordStrength.js"></script>
+    <script src="../Scripts/app/Directives/PasswordStrengthDirective.js"></script>
+    <script src="../Scripts/app/Directives/pesDirective.js"></script>
+    <script src="../Scripts/app/Directives/RecorderDirective.js"></script>
+    <script src="../Scripts/app/Directives/showWordsDirect.js"></script>
+    <script src="../Scripts/app/Directives/ticketTable.js"></script>
+    <script src="../Scripts/app/Directives/TinyPlayerDirective.js"></script>
+    <script src="../Scripts/app/Directives/ValidationDirective.js"></script>
+    <script src="../Scripts/app/Directives/wordsuiteProgress.js"></script>
+    <script src="../Scripts/app/Controllers/AddGroupController.js"></script>
+    <script src="../Scripts/app/Controllers/AddWordTranslationsModalController.js"></script>
+    <script src="../Scripts/app/Controllers/ChangePasswordController.js"></script>
+    <script src="../Scripts/app/Controllers/ConfirmModalController.js"></script>
+    <script src="../Scripts/app/Controllers/CourseController.js"></script>
+    <script src="../Scripts/app/Controllers/CourseDetailController.js"></script>
+    <script src="../Scripts/app/Controllers/CreateCourseController.js"></script>
+    <script src="../Scripts/app/Controllers/CreateWordTranslationController.js"></script>
+    <script src="../Scripts/app/Controllers/EditCourseController.js"></script>
+    <script src="../Scripts/app/Controllers/EditUserProfileController.js"></script>
+    <script src="../Scripts/app/Controllers/EditWordController.js"></script>
+    <script src="../Scripts/app/Controllers/EmailConfirmedController.js"></script>
+    <script src="../Scripts/app/Controllers/ExtendedWordSuiteController.js"></script>
+    <script src="../Scripts/app/Controllers/GlobalDictionaryController.js"></script>
+    <script src="../Scripts/app/Controllers/GroupController.js"></script>
+    <script src="../Scripts/app/Controllers/GroupDetailsController.js"></script>
+    <script src="../Scripts/app/Controllers/ImportWordTranslationsController.js"></script>
+    <script src="../Scripts/app/Controllers/IndexController.js"></script>
+    <script src="../Scripts/app/Controllers/LanguageController.js"></script>
+    <script src="../Scripts/app/Controllers/LoginController.js"></script>
+    <script src="../Scripts/app/Controllers/MessageModalController.js"></script>
+    <script src="../Scripts/app/Controllers/MessageWithActionModalController.js"></script>
+    <script src="../Scripts/app/Controllers/MixQuizController.js"></script>
+    <script src="../Scripts/app/Controllers/PictureController.js"></script>
+    <script src="../Scripts/app/Controllers/PublicGroupsController.js"></script>
+    <script src="../Scripts/app/Controllers/QuizController.js"></script>
+    <script src="../Scripts/app/Controllers/QuizControllerDesc.js"></script>
+    <script src="../Scripts/app/Controllers/RecorderController.js"></script>
+    <script src="../Scripts/app/Controllers/RegisterController.js"></script>
+    <script src="../Scripts/app/Controllers/RequestsToSubscribe.js"></script>
+    <script src="../Scripts/app/Controllers/ResetPasswordController.js"></script>
+    <script src="../Scripts/app/Controllers/SendRequestController.js"></script>
+    <script src="../Scripts/app/Controllers/StudentProgressChartController.js"></script>
+    <script src="../Scripts/app/Controllers/StudentProgressController.js"></script>
+    <script src="../Scripts/app/Controllers/SynonymQuizController.js"></script>
+    <script src="../Scripts/app/Controllers/TeacherManagerController.js"></script>
+    <script src="../Scripts/app/Controllers/TicketController.js"></script>
+    <script src="../Scripts/app/Controllers/ticketsTableController.js"></script>
+    <script src="../Scripts/app/Controllers/TinyPlayerController.js"></script>
+    <script src="../Scripts/app/Controllers/TutorController.js"></script>
+    <script src="../Scripts/app/Controllers/UnassignedModalController.js"></script>
+    <script src="../Scripts/app/Controllers/UnauthorizeModalController.js"></script>
+    <script src="../Scripts/app/Controllers/UserCoursesController.js"></script>
+    <script src="../Scripts/app/Controllers/UsersConfiguringController.js"></script>
+    <script src="../Scripts/app/Controllers/WordsController.js"></script>
+    <script src="../Scripts/app/Controllers/WordSuiteCollectionController.js"></script>
+    <script src="../Scripts/app/Controllers/WordSuiteCreateController.js"></script>
+    <script src="../Scripts/app/Controllers/WordSuiteEditController.js"></script>
+    <script src="../Scripts/app/Controllers/WordSuiteProgressController.js"></script>
+    <script src="../Scripts/app/Controllers/WordSuitesController.js"></script>
+    <script src="../Scripts/app/Controllers/WordSuiteShareController.js"></script>
+    <script src="../Scripts/app/Controllers/WordSuiteWordsController.js"></script>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <button id="sidebar-toggle"
+                type="button"
+                class="navbar-toggle"
+                ng-show="isLoggedIn()"
+                ng-click="toggleSidebar()">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-header">
+            <a href="" ng-click="onLogoClick()"><img class="icon-bar" src="../Images/logo.png" /></a>
+        </div>
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
                     <li ng-show="isLoggedIn()">
                         <span class="custom-dropdown">
                             <select ng-model="defaultTheme" ng-options="theme.url as theme.name for theme in listOfThemes"></select>
@@ -40,28 +173,28 @@
                             <button class="btn btn-success" data-toggle="modal" ng-click="openLoginModal()"><span class="glyphicon glyphicon-log-in"></span>Login</button>
                             <button class="btn btn-primary" ng-click="openRegisterModal()"><i class="glyphicon glyphicon-user"></i>Sign Up</button>
                         </div>
-                </li>
+                    </li>
                     <li class="navbar-btn" ng-show="isLoggedIn() && isTeacher">
                         <div class="btn-group" dropdown>
                             <button class="btn btn-default" dropdown-toggle>
                                 Create <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                                <li role="menuitem"><a href="/Index#/CreateCourse">Course</a></li>
+                                <li role="menuitem"><a href="Index#/CreateCourse">Course</a></li>
                                 <!--<li role="menuitem"><a href="Index#/AddGroup">Group</a></li>-->
                                 <li role="menuitem"><a href="Index#/CreateWordSuite">Word Suite</a></li>
                             </ul>
                         </div>
-                </li>
+                    </li>
                     <li class="navbar-btn" ng-show="isLoggedIn()">
                         <div id="dropdownBtn" class="btn-group" dropdown>
                             <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle>
                                 <strong><span ng-bind="userName" ng-model="getName"></span></strong> <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="/Index#/EditUserProfile">Edit Profile</a></li>
+                                <li><a href="Index#/EditUserProfile">Edit Profile</a></li>
                                 <li class="divider"></li>
-                                <li><a href="/Index#/Courses">Courses</a></li>
+                                <li><a href="Index#/Courses">Courses</a></li>
                                 <li class="divider" ng-show="showWordSuitesIcon"></li>
                                 <li><a ng-hide="showWordSuitesIcon" href="/Index#/WordSuites">Word Suits</a></li>
                                 <li class="divider" ng-hide="showWordSuitesIcon"></li>
@@ -74,92 +207,92 @@
                             </ul>
                         </div>
                     </li>
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-<!--sidebar start-->
-<aside ng-show="isLoggedIn()">
-    <div id="sidebar" class="nav-collapse">
-        <!-- sidebar menu start-->
-        <ul class="sidebar-menu" id="nav-accordion">
-            <section id="study-tools" ng-controller="CourseController" ng-show="isStudent">
-                <h3>Study Tools</h3>
-                <li class="sub-menu">
-                    <a id="cursorStyle">
-                        <i ng-hide="showIcon" class="glyphicon glyphicon-list" ng-click="showCoursePage()"></i>
-                        <span ng-click="showCoursePage()">
-                            <i class="glyphicon glyphicon-list"></i>
-                            Courses
-                        </span>
-                        <i id="menuRightStyle" class="glyphicon glyphicon-menu-right" ng-click="showCoursesList()" ng-show="showIcon"></i>
-                    </a>
-                    <ul class="sub" ng-hide="showCourseList">
-                        <li ng-repeat="course in enrollCourses"><a href="Index#/CourseDetail/{{course.Id}}">{{course.Name}}</a></li>
-                    </ul>
-                </li>
-                <!--<li class="sub-menu">
-                    <a href="Index#/PublicGroups">
-                        <span>Public Groups</span>
-                    </a>
-                </li>-->
-                    <hr />
-            </section>
-            <section id="teaching-tools" ng-show="isTeacher">
-                <h3>Teaching Tools</h3>
-                <li class="sub-menu">
-                    <a id="cursorStyle">
-                        <i ng-hide="showIcon" class="glyphicon glyphicon-list" ng-click="showTeacherManager()"></i>
-                        <span ng-click="showTeacherManager()">
-                            <i class="glyphicon glyphicon-list"></i>
-                            Manager
-                        </span>
-                        <i id="menuRightStyle" class="glyphicon glyphicon-menu-right" ng-click="showManagersList()" ng-show="showIcon"></i>
-                    </a>
-                    <ul class="sub" ng-hide="showManagerList">
-                        <li>
-                            <a href="Index#/WordSuites">
-                                <span>Word Suites</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="Index#/UserCourses">
-                                <span>Courses</span>
-                            </a>
-                        </li>
-                        <!--<li>
-                            <a href="Index#/Groups">
-                                <span>Groups</span>
-                            </a>
-                        </li>-->
-                        <li>
-                        <a href="Index#/GlobalDictionary">
-                            <span>Global Dictionary</span>
+    </nav>
+    <!--sidebar start-->
+    <aside ng-show="isLoggedIn()">
+        <div id="sidebar" class="nav-collapse">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <section id="study-tools" ng-controller="CourseController" ng-show="isStudent">
+                    <h3>Study Tools</h3>
+                    <li class="sub-menu">
+                        <a id="cursorStyle">
+                            <i ng-hide="showIcon" class="glyphicon glyphicon-list" ng-click="showCoursePage()"></i>
+                            <span ng-click="showCoursePage()">
+                                <i class="glyphicon glyphicon-list"></i>
+                                Courses
+                            </span>
+                            <i id="menuRightStyle" class="glyphicon glyphicon-menu-right" ng-click="showCoursesList()" ng-show="showIcon"></i>
                         </a>
-                        </li>
-                        <!--<li>
-                            <a href="Index#/RequestsToSubscribe">
-                                <span>Subscription requests</span>
-                            </a>
-                        </li>-->
-                    </ul>
-                </li>
+                        <ul class="sub" ng-hide="showCourseList">
+                            <li ng-repeat="course in enrollCourses"><a href="Index#/CourseDetail/{{course.Id}}">{{course.Name}}</a></li>
+                        </ul>
+                    </li>
+                    <!--<li class="sub-menu">
+                        <a href="Index#/PublicGroups">
+                            <span>Public Groups</span>
+                        </a>
+                    </li>-->
                     <hr />
-            </section>
-            <section id="admin-tools" ng-show="isAdmin">
-                <h3>Admin Tools</h3>
-                <li class="sub-menu">
-                    <a href="Index#/Users">
-                        <i class="glyphicon glyphicon-list"></i>
-                        <span>Users</span> 
-                    </a>
-                </li>
-                <li class="sub-menu">
-                    <a href="Index#/Languages">
-                        <i class="glyphicon glyphicon-signal"></i>
-                        <span>Languages</span>
-                    </a>
-                </li>
+                </section>
+                <section id="teaching-tools" ng-show="isTeacher">
+                    <h3>Teaching Tools</h3>
+                    <li class="sub-menu">
+                        <a id="cursorStyle">
+                            <i ng-hide="showIcon" class="glyphicon glyphicon-list" ng-click="showTeacherManager()"></i>
+                            <span ng-click="showTeacherManager()">
+                                <i class="glyphicon glyphicon-list"></i>
+                                Manager
+                            </span>
+                            <i id="menuRightStyle" class="glyphicon glyphicon-menu-right" ng-click="showManagersList()" ng-show="showIcon"></i>
+                        </a>
+                        <ul class="sub" ng-hide="showManagerList">
+                            <li>
+                                <a href="Index#/WordSuites">
+                                    <span>Word Suites</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Index#/UserCourses">
+                                    <span>Courses</span>
+                                </a>
+                            </li>
+                            <!--<li>
+                                <a href="Index#/Groups">
+                                    <span>Groups</span>
+                                </a>
+                            </li>-->
+                            <li>
+                                <a href="Index#/GlobalDictionary">
+                                    <span>Global Dictionary</span>
+                                </a>
+                            </li>
+                            <!--<li>
+                                <a href="Index#/RequestsToSubscribe">
+                                    <span>Subscription requests</span>
+                                </a>
+                            </li>-->
+                        </ul>
+                    </li>
+                    <hr />
+                </section>
+                <section id="admin-tools" ng-show="isAdmin">
+                    <h3>Admin Tools</h3>
+                    <li class="sub-menu">
+                        <a href="/Index#/Users">
+                            <i class="glyphicon glyphicon-list"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/Index#/Languages">
+                            <i class="glyphicon glyphicon-signal"></i>
+                            <span>Languages</span>
+                        </a>
+                    </li>
                     <!--<li class="sub-menu">
                         <a href="Index#/Tickets">
                             <i class="glyphicon glyphicon-envelope"></i>
@@ -167,26 +300,25 @@
                         </a>
                     </li>-->
                     <hr />
-            </section>
-            <section id="your-stuff" ng-show="isLoggedIn()">
-                <h3>Your Stuff</h3>
-                <li class="sub-menu">
-                    <a href="Index#/EditUserProfile">
-                        <i class="glyphicon glyphicon-user"></i>
-                        <span>Profile </span>
-                    </a>
-                </li>
-            </section>
-        </ul>
-        <!-- sidebar menu end-->
+                </section>
+                <section id="your-stuff" ng-show="isLoggedIn()">
+                    <h3>Your Stuff</h3>
+                    <li class="sub-menu">
+                        <a href="/Index#/EditUserProfile">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span>Profile </span>
+                        </a>
+                    </li>
+                </section>
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+    <!--sidebar end-->
+    <div class="container-fluid" id="content">
+        <div class="jumbotron jumbotron-no-paddings" id="myJum">
+            <div ng-view></div>
+        </div>
     </div>
-</aside>
-<!--sidebar end-->
-<div class="container-fluid" id="content">
-    <div class="jumbotron jumbotron-no-paddings" id="myJum">
-        <div ng-view></div>
-    </div>
-</div>
-<script src="../Scripts/sidebar.js"></script>
 </body>
 </html>
