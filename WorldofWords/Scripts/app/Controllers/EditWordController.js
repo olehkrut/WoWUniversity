@@ -269,9 +269,8 @@
     }
     
     var checkifAreAnyChangesInRecord = function () {
-        return (oldRecord !== null && $scope.oldRecord[0] === null)
-            || (oldRecord === null && $scope.oldRecord[0] !== null)
-            || (oldRecord.Content.toString() !== $scope.oldRecord[0].Content.toString() || oldRecord.Description !== $scope.oldRecord[0].Description);
+        return (oldRecord !== null && $scope.oldRecord[0] === null) ||
+            (oldRecord === null && $scope.oldRecord[0] !== null);
     }
     
 

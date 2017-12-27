@@ -377,6 +377,9 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Gruntfile.js" />
+    <Content Include="Images\delete_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\distance-learning2.jpg" />
     <Content Include="Images\distance-learning3.jpg" />
     <Content Include="Images\distance-learning4.jpg" />
