@@ -205,6 +205,39 @@ namespace WorldOfWords.Domain.Services.Services
             }
         }
 
+        public async Task<IEnumerable<UserForListingModel>> GetStudentsSubscribedToTest(List<int> teachersIds)
+        {
+            List<int> teacherCourseIds = new List<int>();
+            List<User> desiredUsers = new List<User>();
+            List<Enrollment> enrollments = new List<Enrollment>();
+
+
+
+            using (var uow = _unitOfWorkFactory.GetUnitOfWork())
+            {
+                teacherCourseIds.AddRange(await uow.CourseRepository.GetAll()
+                    .Where(c => teachersIds.Contains(c.OwnerId)).Select(c => c.Id).ToListAsync());
+
+                enrollments.AddRange(await uow.GroupRepository.GetAll()
+                    .Where(g => teacherCourseIds.Contains(g.CourseId)).Include(g => g.Enrollments)
+                    .SelectMany(g => g.Enrollments).ToListAsync());
+
+                desiredUsers.AddRange(await uow.UserRepository.GetAll().Take(3).ToListAsync());
+
+                //desiredUsers.AddRange(await uow.GroupRepository.GetAll()
+                //    .Where(g => teacherCourseIds.Contains(g.CourseId)).Include(g => g.Enrollments)
+                //    .SelectMany(g => g.Enrollments).Include(e => e.User).Select(e => e.User)
+                //    .Select(u => new User
+                //    {
+                //        Id = u.Id,
+                //        Email = u.Email,
+                //        Name = u.Name
+                //    })
+                //    .ToListAsync());
+            }
+
+            return desiredUsers.Select(t => _userListMapper.Map(t));
+        }
 
         //mfomitc:
         public async Task<IEnumerable<UserForListingModel>> GetUsersByRoleIdAsync(int roleId)
@@ -219,6 +252,7 @@ namespace WorldOfWords.Domain.Services.Services
                     .Select(w => new User
                     {
                         Id = w.Id,
+                        Email = w.Email,
                         Name = w.Name
                     }));
             }

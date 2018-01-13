@@ -107,6 +107,20 @@ namespace WorldofWords.Controllers
             return sharedSuites ? Ok() as IHttpActionResult : BadRequest() as IHttpActionResult;
         }
 
+        [WowAuthorization(Roles = "Admin")]
+        //mfomitc
+        [Route("StudentsSubscribedToCource")]
+        public async Task<IEnumerable<UserForListingModel>> StudentsSubscribedToCource(WordSuiteToShareModelTest model)
+        {
+            if (model.WordSuiteId <= 0 && model.teachersId == null)
+            {
+                throw new ArgumentNullException("wordSuite and teacher", "WordSuite and teacher ID can't be negative!");
+            }
+
+            var desiredUsers =  await _userservice.GetStudentsSubscribedToTest(model.teachersId);
+            return desiredUsers;
+        }
+
         [AllowAnonymous]
         [HttpGet]
         public IHttpActionResult Delete(int id)

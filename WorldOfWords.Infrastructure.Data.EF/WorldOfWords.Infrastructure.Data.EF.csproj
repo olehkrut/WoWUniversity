@@ -41,11 +41,11 @@
       <HintPath>..\packages\dotless.1.5.0\lib\dotless.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -166,6 +166,10 @@
     <Compile Include="Migrations\201602161205469_AddCommentToWordMigration.Designer.cs">
       <DependentUpon>201602161205469_AddCommentToWordMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801131642566_lll.cs" />
+    <Compile Include="Migrations\201801131642566_lll.Designer.cs">
+      <DependentUpon>201801131642566_lll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\EFRepository.cs" />
     <Compile Include="Repositories\IncomingUserRepository.cs" />
     <Compile Include="Initializers\WorldOfWordsDbInitializer.cs" />
@@ -209,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602161205469_AddCommentToWordMigration.resx">
       <DependentUpon>201602161205469_AddCommentToWordMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801131642566_lll.resx">
+      <DependentUpon>201801131642566_lll.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

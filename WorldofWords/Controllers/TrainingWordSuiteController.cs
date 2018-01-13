@@ -88,7 +88,7 @@ namespace WorldofWords.Controllers
                 {
                     suite.QuizStartTime = new DateTime();
                 }
-                if (((DateTime)suite.QuizStartTime).AddDays(1) < DateTime.Now)
+                if (((DateTime)suite.QuizStartTime).AddDays(1) < DateTime.Now || true)
                 {
                     await _service.SetTimeAsync(suite.Id);
                     Shuffle(suite.WordTranslations);
@@ -123,6 +123,11 @@ namespace WorldofWords.Controllers
                 {
                     word.Result = true;
                     _progressService.IncrementProgress(answer.Id, word.Id);
+                }
+                else
+                {
+                    word.Result = false;
+                    _progressService.DecrementProgress(answer.Id, word.Id);
                 }
             }
         }

@@ -10,6 +10,7 @@ namespace WorldOfWords.Domain.Models
         [Key, Column(Order = 1)]
         public int WordTranslationId { get; set; }
         public int? Progress { get; set; }
+        public int? NumOfMistakes { get; set; }
         public bool IsStudentWord { get; set; }
         public virtual WordSuite WordSuite { get; set; }
         public virtual WordTranslation WordTranslation { get; set; }

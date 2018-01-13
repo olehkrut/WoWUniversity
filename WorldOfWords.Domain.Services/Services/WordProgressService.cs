@@ -103,15 +103,41 @@ namespace WorldOfWords.Domain.Services
             }
         }
 
+        public bool DecrementProgress(int wordSuiteId, int wordTranslationId)
+        {
+            var positive = 1;
+
+            using (var uow = _unitOfWorkFactory.GetUnitOfWork())
+            {
+                var wordProgress = uow.WordProgressRepository.GetAll().First(x => (x.WordSuiteId == wordSuiteId
+                                                                                   && x.WordTranslationId == wordTranslationId));
+
+                if (!wordProgress.NumOfMistakes.HasValue)
+                {
+                    wordProgress.NumOfMistakes = 0;
+                }
+
+                wordProgress.NumOfMistakes += positive;
+                uow.WordProgressRepository.AddOrUpdate(wordProgress);
+                uow.Save();
+
+                return true;
+            }
+        }
+
         public bool IncrementProgress(int wordSuiteId, int wordTranslationId)
         {
+            var positive = 1;
+
             using (var uow = _unitOfWorkFactory.GetUnitOfWork())
             {
                 var wordProgress = uow.WordProgressRepository.GetAll().First(x => (x.WordSuiteId == wordSuiteId
                             && x.WordTranslationId == wordTranslationId));
-                ++(wordProgress.Progress);
+
+                wordProgress.Progress = positive;
                 uow.WordProgressRepository.AddOrUpdate(wordProgress);
                 uow.Save();
+
                 return true;
             }
         }

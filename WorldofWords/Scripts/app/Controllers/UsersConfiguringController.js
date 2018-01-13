@@ -1,5 +1,5 @@
-﻿app.controller('UsersConfiguringController', ["$scope", "$window", "UserService", "ConstService", 
-    function ($scope, $window, UserService, ConstService) {
+﻿app.controller('UsersConfiguringController', ["$scope", "$window", "$modal", "UserService", "ConstService", 
+    function ($scope, $window, $modal, UserService, ConstService) {
     $scope.transformUsers = function (usersInServerForm) {
         var result = [];
         for (var i = 0; i < usersInServerForm.length; ++i) {
@@ -46,6 +46,19 @@
             });
         }
     }
+
+    $scope.submitModal = function (index) {
+
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: 'Views/WordSuiteShare.html',
+            controller: 'WordSuiteShareController',
+            size: 'lg',
+            resolve: {
+                wordSuiteId: 2
+            }
+        });
+    };
 
     $scope.roleChanged = function () {
         $scope.selectedPage = 1;

@@ -42,7 +42,7 @@ function WordSuitesCtrl($modal, $scope, $modal, ModalService, UserService, WordS
             animation: true,
             templateUrl: 'Views/WordSuiteShare.html',
             controller: 'WordSuiteShareController',
-            size: 'sm',
+            size: 'lg',
             resolve: {
                 wordSuiteId: function () {
                     return $scope.wordSuites[index].Id;

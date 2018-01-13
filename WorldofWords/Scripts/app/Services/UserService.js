@@ -1,5 +1,5 @@
 ﻿/// <reference path="../../libs/sha512.js" />
-app.service('UserService',["$http","$q","ConstService", function ($http,$q,ConstService) {
+app.service('UserService',["$http","$q","ConstService", function ($http,$q,ConstService, HttRequest) {
     this.getUserData = function () {
         return JSON.parse(localStorage.getItem(ConstService.userData));
     };

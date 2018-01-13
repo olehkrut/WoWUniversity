@@ -16,6 +16,7 @@ namespace WorldOfWords.Infrastructure.Data.EF.Configurations
             Property(t => t.WordTranslationId).HasColumnName("WordTranslationId");
             Property(t => t.Progress).HasColumnName("Progress");
             Property(t => t.IsStudentWord).HasColumnName("IsStudentWord");
+            Property(t => t.NumOfMistakes).HasColumnName("NumOfMistakes");
 
             //Table & Column Mappings
             HasRequired(t => t.WordSuite)

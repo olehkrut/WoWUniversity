@@ -29,6 +29,7 @@ namespace WorldOfWords.API.Models
             return new UserForListingModel()
             {
                 Id = user.Id,
+                Email = user.Email,
                 Name = user.Name
             };
         }

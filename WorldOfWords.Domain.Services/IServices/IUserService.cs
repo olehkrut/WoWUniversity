@@ -26,6 +26,7 @@ namespace WorldOfWords.Domain.Services.IServices
         //mfomitc
         Task<IEnumerable<UserForListingModel>> GetUsersByRoleIdAsync(int roleId);
         int GetAmountOfUsersByRoleId(int roleId = 0);
+        Task<IEnumerable<UserForListingModel>> GetStudentsSubscribedToTest(List<int> teachersIds);
         List<User> GetUsersFromIntervalByRoleId(int startOfInterval, int endOfInterval, int roleId = 0);
         bool ChangeRolesOfUser(User user);
         List<User> SearchByNameAndRole(string name, int roleid = 0);

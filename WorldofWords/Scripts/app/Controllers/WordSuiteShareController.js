@@ -48,41 +48,46 @@
             };
 
             $scope.submitModal = function () {
-                var modalInstance = $modal.open({
-                    templateUrl: 'confirmModal',
-                    controller: 'ConfirmModalController',
-                    size: 'sm',
-                    backdrop: 'static',
-                    keyboard: false,
-                    resolve: {
 
-                        titleText: function () {
-                            return 'Sharing Word Suites';
-                        },
-                        bodyText: function () {
-                            return 'Submit changes?';
-                        }
-                    }
-                });
+                WordSuiteService.getStudentsSubscribedToCource($scope.teachersToShare)
+                    .then(function (students) {
+                        debugger;
+                    });
+                //var modalInstance = $modal.open({
+                //    templateUrl: 'confirmModal',
+                //    controller: 'ConfirmModalController',
+                //    size: 'sm',
+                //    backdrop: 'static',
+                //    keyboard: false,
+                //    resolve: {
 
-                modalInstance.result.then(function (yes) {
-                    if (yes) {
-                        WordSuiteService
-                            .shareWordSuite($scope.teachersToShare)
-                            .then(
-                                function (success) {
-                                    ModalService.showResultModal('Share word suite', 'Word suite have been succesfully shared', true);
-                                    HubService.notifyAboutSharedWordSuites($scope.teachersToShare.teachersId)
-                                    $scope.closeModal();
-                                },
-                                function (error) {
-                                    ModalService.showResultModal('Share word suite', 'Word suite have not been shared', false);
-                                    $scope.closeModal();
-                                }
-                            );
-                    }
-                }
-                )
+                //        titleText: function () {
+                //            return 'Sharing Word Suites';
+                //        },
+                //        bodyText: function () {
+                //            return 'Submit changes?';
+                //        }
+                //    }
+                //});
+
+                //modalInstance.result.then(function (yes) {
+                //    if (yes) {
+                //        WordSuiteService
+                //            .shareWordSuite($scope.teachersToShare)
+                //            .then(
+                //                function (success) {
+                //                    ModalService.showResultModal('Share word suite', 'Word suite have been succesfully shared', true);
+                //                    HubService.notifyAboutSharedWordSuites($scope.teachersToShare.teachersId)
+                //                    $scope.closeModal();
+                //                },
+                //                function (error) {
+                //                    ModalService.showResultModal('Share word suite', 'Word suite have not been shared', false);
+                //                    $scope.closeModal();
+                //                }
+                //            );
+                //    }
+                //}
+                //)
             };
 
 

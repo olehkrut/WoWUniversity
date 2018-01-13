@@ -77,6 +77,12 @@
         return deferred.promise;
     }
 
+    this.getStudentsSubscribedToCource = function (teachersToShare) {
+        var deferred = $q.defer();
+        HttpRequest.post("api/wordsuite/StudentsSubscribedToCource", teachersToShare, deferred);
+        return deferred.promise;
+    }
+
     this.getAllQuizzes = function () {
         var deferred = $q.defer();
         HttpRequest.get("api/wordsuite/allQuizzes", deferred);

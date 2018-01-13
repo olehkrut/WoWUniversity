@@ -8,6 +8,9 @@ namespace WorldOfWords.Domain.Services
         void CopyProgressesForUsersInGroup(List<User> users, int groupId);
         bool AddRange(List<WordProgress> wordProgressRange);
         bool RemoveRange(List<WordProgress> wordProgressRange);
+
+        bool DecrementProgress(int wordSuiteId, int wordTranslationId);
+
         bool IncrementProgress(int wordSuiteId, int wordTranslationId);
         bool IncrementProgressOfOriginalWord(int wordSuiteId, string originalWord);
         void RemoveProgressesForEnrollment(int enrollmentId);
