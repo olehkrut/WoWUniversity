@@ -135,6 +135,7 @@ namespace WorldOfWords.Domain.Services
                             && x.WordTranslationId == wordTranslationId));
 
                 wordProgress.Progress = positive;
+                wordProgress.NumOfMistakes = 0;
                 uow.WordProgressRepository.AddOrUpdate(wordProgress);
                 uow.Save();
 

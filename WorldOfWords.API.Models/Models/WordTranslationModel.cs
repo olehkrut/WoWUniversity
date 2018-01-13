@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public int Progress { get; set; }
+        public int? NumOfMistakes { get; set; }
         public bool Result { get; set; }
         public string OriginalWord { get; set; }
         public string OriginalWordDesc { get; set; }

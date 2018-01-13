@@ -35,6 +35,13 @@
         return deferred.promise;
     }
 
+    this.getMistakesWordsFromWordSuite = function (id) {
+
+        var deferred = $q.defer();
+        HttpRequest.get("api/TrainingWordSuite/AllMistakesWords?id=" + id, deferred);
+        return deferred.promise;
+    }
+
     this.getExtensionTranslations = function (baseWordSuiteId) {
         var deferred = $q.defer();
         HttpRequest.get("api/TrainingWordSuite/ExtensionTranslationsFreq?baseWordSuiteId=" + baseWordSuiteId, deferred);

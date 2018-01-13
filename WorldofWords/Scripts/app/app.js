@@ -104,6 +104,14 @@ app.config(["$routeProvider", function ($routeProvider) {
                 privateData: false
             }
         })
+        //Mistakes
+        .when('/Mistakes/:wordSuiteId', {
+            templateUrl: 'Views/Mistakes.html',
+            controller: 'MistakesController',
+            data: {
+                privateData: false
+            }
+        })
         // route for the Create WordSuite page
         .when('/CreateWordSuite', {
             templateUrl: 'Views/CreateWordSuite.html',

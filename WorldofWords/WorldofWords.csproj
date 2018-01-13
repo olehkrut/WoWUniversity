@@ -432,6 +432,7 @@
     <Content Include="Scripts\app\Controllers\EditWordController.js" />
     <Content Include="Scripts\app\Controllers\ExtendedWordSuiteController.js" />
     <Content Include="Scripts\app\Controllers\GroupDetailsController.js" />
+    <Content Include="Scripts\app\Controllers\MistakesController.js" />
     <Content Include="Scripts\app\Controllers\PictureController.js" />
     <Content Include="Scripts\app\Controllers\PublicGroupsController.js" />
     <Content Include="Scripts\app\Controllers\QuizControllerDesc.js" />
@@ -582,6 +583,7 @@
     <Content Include="Views\ExtendedWordSuite.html" />
     <Content Include="Views\GroupDetails.html" />
     <Content Include="Views\MessageWithActionModal.html" />
+    <Content Include="Views\Mistakes.html" />
     <Content Include="Views\PasswordChanged.html" />
     <Content Include="Views\PublicGroups.html" />
     <Content Include="Views\QuizDesc.html" />

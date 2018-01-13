@@ -66,6 +66,27 @@ namespace WorldofWords.Controllers
             }
             return wordSuite;
         }
+
+        [Route("AllMistakesWords")]
+        public async Task<TrainingWordSuiteModel> GetWordSuiteWithAllMistakeWords(int id)
+        {
+            var wordSuite = _trainingMapper.MapSpecial(await _service.GetByIDAsync(id));
+
+            foreach (WordTranslationModel word in wordSuite.WordTranslations)
+            {
+                if (_progressService.IsStudentWord(_progressMapper.Map(wordSuite.Id, word.Id)))
+                {
+                    word.IsStudentWord = true;
+                }
+                else
+                {
+                    word.IsStudentWord = false;
+                }
+            }
+
+            return wordSuite;
+        }
+
         [Route("ExtensionTranslationsFreq")]
         public async Task<List<WordTranslationFreq>> GetTranslationsFreqAddedToWordSuiteByUser(int baseWordSuiteId)
         {

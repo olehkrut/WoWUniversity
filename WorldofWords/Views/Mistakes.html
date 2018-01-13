@@ -1,0 +1,36 @@
+﻿<div ng-include="'Views/ConfirmModal.html'"></div>
+<div class="container">
+    <div class="row ">
+        <div class="col-sm-6 text-left">
+            <h3>{{wordSuite.Name}}</h3>
+        </div>
+    </div>
+    <div class="panel panel-default row">
+        <table class="table">
+            <thead>
+                <tr class="blod-text">
+                    <td>
+                        Word
+                        <span>&nbsp</span>
+                        <span ng-click="sort(1,'OriginalWord')" class="glyphicon glyphicon-sort-by-alphabet"></span>
+                        <span>&nbsp</span>
+                        <span ng-click="sort(0, 'OriginalWord')" class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                    </td>
+                    <td>
+                        Translation
+                    </td>
+                    <!--<td class="text-center">
+                        Mistakes
+                    </td>-->
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="word in wordSuite.WordTranslations">
+                    <td>{{ word.OriginalWord }}</td>
+                    <td>{{ word.TranslationWord }}</td>
+                   <!-- <td class="text-center">{{ word.NumOfMistakes }}</td>-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
