@@ -46,14 +46,19 @@ namespace WorldOfWords.API.Models
             wordSuiteModel.LanguageId = WordSuite.LanguageId;
             wordSuiteModel.Threshold = WordSuite.Threshold;
             wordSuiteModel.WordTranslations = new List<WordTranslationModel>();
+
+            var badWordProgress = WordSuite.WordProgresses.Where(wp => wp.NumOfMistakes >= allowedMistakes).ToList();
+
             wordSuiteModel.WordTranslations.AddRange(WordSuite.WordProgresses
-                .Where(wp => wp.NumOfMistakes > allowedMistakes).Select(x => _mapper.Map(x.WordTranslation)).ToList());
+                .Where(wp => wp.NumOfMistakes >= allowedMistakes).Select(x => _mapper.Map(x.WordTranslation)).ToList());
 
 
             for (int i = 0; i < wordSuiteModel.WordTranslations.Count; i++)
             {
-                wordSuiteModel.WordTranslations[i].Progress = (int)(WordSuite.WordProgresses.ToList())[i].Progress;
-                wordSuiteModel.WordTranslations[i].NumOfMistakes = (int?)(WordSuite.WordProgresses.ToList())[i].NumOfMistakes;
+                var wordProgress = badWordProgress[i];
+
+                wordSuiteModel.WordTranslations[i].Progress = (int)wordProgress.Progress;
+                wordSuiteModel.WordTranslations[i].NumOfMistakes = wordProgress.NumOfMistakes;
             }
             return wordSuiteModel;
         }
