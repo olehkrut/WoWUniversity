@@ -43,6 +43,17 @@
         }
     }
 
+    $scope.showMistakes = function() {
+
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: 'Views/Mistakes.html',
+            controller: 'MistakesController',
+            size: 'lg',
+            windowClass: 'app-modal-window'
+        });
+    }
+
     $scope.remove = function (index) {
         var modalInstance = $modal.open({
             templateUrl: 'confirmModal',
@@ -86,7 +97,8 @@
 
     var language;
     var loadedRecords = [];
-   
+
+
     var initialize = function () {
         WordSuiteService.getWordsFromWordSuite($routeParams.wordSuiteId)
         .then(function (response) {

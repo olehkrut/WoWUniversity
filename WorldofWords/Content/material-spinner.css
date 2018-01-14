@@ -3,6 +3,10 @@
           animation: rotator 1.4s linear infinite;
 }
 
+.app-modal-window .modal-dialog {
+    width: 85%;
+}
+
 @-webkit-keyframes rotator {
   0% {
     -webkit-transform: rotate(0deg);
