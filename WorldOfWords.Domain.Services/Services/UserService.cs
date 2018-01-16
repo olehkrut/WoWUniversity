@@ -259,6 +259,29 @@ namespace WorldOfWords.Domain.Services.Services
             return teacherList.Select(t => _userListMapper.Map(t));
         }
 
+        public async Task<List<User>> GetStudentsByTeacher(List<int> teachersId)
+        {
+            List<User> students = new List<User>();
+
+            using (var uow = _unitOfWorkFactory.GetUnitOfWork())
+            {
+                foreach (var teacherId in teachersId)
+                {
+                    var myCourses = await uow.CourseRepository.GetAll()
+                        .Where(x => x.OwnerId == teacherId).Select(x => x.Id).ToListAsync();
+                    var groups = await uow.GroupRepository.GetAll()
+                        .Where(x => myCourses.Contains(x.CourseId)).Select(x => x.Id).ToListAsync();
+
+                    var enrolledStudents = await uow.EnrollmentRepository.GetAll()
+                        .Where(x => groups.Contains(x.GroupId)).Select(x => x.User).ToListAsync();
+
+                    students.AddRange(enrolledStudents);
+                }
+            }
+
+            return students;
+        }
+
         public List<User> GetUsersFromIntervalByRoleId(int startOfInterval, int endOfInterval, int roleId = 0)
         {
             using (var uow = _unitOfWorkFactory.GetUnitOfWork())

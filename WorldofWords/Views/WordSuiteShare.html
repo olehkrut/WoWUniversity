@@ -23,6 +23,7 @@
             <td width="7%"><input type="checkbox" checklist-model="teachersToShare.teachersId" checklist-value="teacher.Id" /></td>
         </tr>
     </table>
+
 </div>
 <div class="modal-footer">
     <div class="row text-center" ng-init="currentPage = 1; itemsPerPage = 5">
@@ -37,6 +38,27 @@
                     previous-text="&lsaquo;" next-text="&rsaquo;" first-text="First" last-text="Last">
         </pagination>
     </div>
+    <div class="row">
+        <table class="table" ng-show="isShowed">
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    Email
+                </td>
+            </tr>
+            <tr ng-repeat="user in userLIst">
+                <td>
+                    {{user.Name}}
+                </td>
+                <td>
+                    {{user.Email}}
+                </td>
+            </tr>
+        </table>
+    </div>
+
     <br>
      <button class="btn btn-primary" type="button" ng-click="submitModal()">Submit</button>
     </div> 

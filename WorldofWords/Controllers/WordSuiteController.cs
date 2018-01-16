@@ -9,6 +9,7 @@ using WorldOfWords.Domain.Services.IServices;
 using WorldOfWords.API.Models.Models;
 using WorldofWords.Hubs;
 using Microsoft.AspNet.SignalR;
+using WorldOfWords.Domain.Models;
 
 namespace WorldofWords.Controllers
 {
@@ -110,15 +111,16 @@ namespace WorldofWords.Controllers
         [WowAuthorization(Roles = "Admin")]
         //mfomitc
         [Route("StudentsSubscribedToCource")]
-        public async Task<IEnumerable<UserForListingModel>> StudentsSubscribedToCource(WordSuiteToShareModelTest model)
+        public async Task<List<UserForListingModel>> StudentsSubscribedToCource(WordSuiteToShareModelTest model)
         {
             if (model.WordSuiteId <= 0 && model.teachersId == null)
             {
                 throw new ArgumentNullException("wordSuite and teacher", "WordSuite and teacher ID can't be negative!");
             }
 
-            var desiredUsers =  await _userservice.GetStudentsSubscribedToTest(model.teachersId);
-            return desiredUsers;
+            var desiredUsers =  await _userservice.GetStudentsByTeacher(model.teachersId);
+
+            return desiredUsers.Select(user => _userListMapper.Map(user)).ToList();
         }
 
         [AllowAnonymous]

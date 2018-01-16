@@ -31,5 +31,7 @@ namespace WorldOfWords.Domain.Services.IServices
         bool ChangeRolesOfUser(User user);
         List<User> SearchByNameAndRole(string name, int roleid = 0);
         IEnumerable<string> GetCoursesNamesByUserId(int userId);
+
+        Task<List<User>> GetStudentsByTeacher(List<int> teachersId);
     }
 }

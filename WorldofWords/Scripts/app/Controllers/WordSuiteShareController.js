@@ -51,7 +51,9 @@
 
                 WordSuiteService.getStudentsSubscribedToCource($scope.teachersToShare)
                     .then(function (students) {
-                        debugger;
+
+                        $scope.userLIst = students;
+                        $scope.isShowed = true;
                     });
                 //var modalInstance = $modal.open({
                 //    templateUrl: 'confirmModal',
